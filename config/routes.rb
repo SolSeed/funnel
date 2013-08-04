@@ -1,4 +1,5 @@
 Funnel::Application.routes.draw do
+  root 'landing#index'
   resources :visitors
 
   # The priority is based upon order of creation: first created -> highest priority.
