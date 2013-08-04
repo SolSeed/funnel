@@ -52,3 +52,4 @@ gem "newrelic_rpm"
 gem "timecop"
 gem "fabrication"
 gem "rails-footnotes", ">= 3.7.9", group: :development
+gem "debugger", groups: [:development, :test]
