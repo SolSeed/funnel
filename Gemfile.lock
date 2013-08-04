@@ -39,6 +39,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fabrication (2.7.2)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -132,6 +133,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  fabrication
   haml-rails (>= 0.3.4)
   jbuilder (~> 1.2)
   jquery-rails
