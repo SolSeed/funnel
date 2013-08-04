@@ -49,3 +49,4 @@ gem "silent-postgres"
 gem "rspec-rails", group: [:development, :test]
 gem "haml-rails", ">= 0.3.4", group: :development
 gem "newrelic_rpm"
+gem "timecop"
