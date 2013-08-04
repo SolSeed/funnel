@@ -51,3 +51,4 @@ gem "haml-rails", ">= 0.3.4", group: :development
 gem "newrelic_rpm"
 gem "timecop"
 gem "fabrication"
+gem "rails-footnotes", ">= 3.7.9", group: :development
