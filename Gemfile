@@ -46,3 +46,4 @@ end
 
 gem "pg"
 gem "silent-postgres"
+gem "rspec-rails", group: [:development, :test]
