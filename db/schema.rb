@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130810223631) do
+ActiveRecord::Schema.define(version: 20130810225231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "subscriptions", force: true do |t|
+    t.string   "email"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subscriptions", ["confirmation_token"], name: "index_subscriptions_on_confirmation_token", unique: true, using: :btree
+  add_index "subscriptions", ["email"], name: "index_subscriptions_on_email", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

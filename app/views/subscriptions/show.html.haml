@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @subscription.email
+%p
+  %b Confirmation token:
+  = @subscription.confirmation_token
+%p
+  %b Confirmed at:
+  = @subscription.confirmed_at
+%p
+  %b Confirmation sent at:
+  = @subscription.confirmation_sent_at
+
+= link_to 'Edit', edit_subscription_path(@subscription)
+\|
+= link_to 'Back', subscriptions_path

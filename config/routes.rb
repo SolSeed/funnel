@@ -1,6 +1,7 @@
 Funnel::Application.routes.draw do
   root 'landing#index'
   resources :visitors
+  resources :subscriptions
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
