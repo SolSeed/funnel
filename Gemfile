@@ -55,3 +55,4 @@ gem "fabrication"
 gem "rails-footnotes", ">= 3.7.9", group: :development
 gem "debugger", groups: [:development, :test]
 gem "unicorn"
+gem "devise", github: "Trust40/devise"
