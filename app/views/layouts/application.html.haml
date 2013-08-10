@@ -6,4 +6,20 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = yield
+    .page
+      %header#page-header
+        .wrapper
+          %h1#logo
+            = link_to "SolSeed ... Embrace Science. Cherish the Earth. Bring Life!", "/"
+          %ul
+            %li
+              = link_to "Our Beliefs", "/We-Believe"
+            %li
+              = link_to "Join Us", "/subscriptions/new"
+            %li
+              = link_to "On Facebook", "http://www.facebook.com/SolSeed"
+            %li
+              = link_to "Our Wiki", "http://wiki.solseed.org"
+      .page-content
+        .wrapper
+          = yield
