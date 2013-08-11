@@ -10,4 +10,5 @@
  *
  *= require landing
  *= require jquery.ui.all
+ *= require booklet/jquery.booklet.latest
  */

@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery.ui.all
 //= require jquery_ujs
+//= require jquery.easing.1.3
+//= require booklet/jquery.booklet.latest
 //= require turbolinks
 //= require_tree .
