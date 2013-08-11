@@ -28,7 +28,10 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
+        gb = Gibbon::API.new(ENV['MAILCHIMP_API_KEY'])
+        list_id_for_friends_of_solseed_list = '9c0e91fd66'
+        gb.lists.subscribe id: list_id_for_friends_of_solseed_list, email: {email: @subscription.email}
+        format.html { redirect_to '/', notice: 'Subscription was successfully created, please visit your email to confirm!' }
         format.json { render action: 'show', status: :created, location: @subscription }
       else
         format.html { render action: 'new' }
