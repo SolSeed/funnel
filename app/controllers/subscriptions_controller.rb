@@ -72,6 +72,6 @@ class SubscriptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subscription_params
-      params.require(:subscription).permit(:email, :confirmation_token, :confirmed_at, :confirmation_sent_at)
+      params.require(:subscription).permit(:email)
     end
 end
