@@ -1,0 +1,2 @@
+class WeBelieveController < ApplicationController
+end

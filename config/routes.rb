@@ -3,6 +3,8 @@ Funnel::Application.routes.draw do
   resources :visitors
   resources :subscriptions
   devise_for :users
+  get 'we_believe' => 'we_believe#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

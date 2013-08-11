@@ -16,4 +16,5 @@
 //= require jquery.easing.1.3
 //= require booklet/jquery.booklet.latest
 //= require turbolinks
+//= require we_believe
 //= require_tree .
