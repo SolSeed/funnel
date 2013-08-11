@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery.ui.all
 //= require jquery_ujs
 //= require jquery.easing.1.3
 //= require booklet/jquery.booklet.latest
-//= require turbolinks
 //= require we_believe
 //= require_tree .
+//= require turbolinks
