@@ -3,4 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #WeBelieve {
   color: black;
+  .content-page {
+    padding: 20px;
+    .epigraph {
+      font-style: italic;
+      .tab {
+        padding-left: 20px;
+      }
+    }
+  }
 }
