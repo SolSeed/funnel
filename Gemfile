@@ -52,7 +52,7 @@ gem 'gibbon'
 gem "pg"
 gem "silent-postgres"
 gem "rspec-rails", group: [:development, :test]
-gem "haml-rails", ">= 0.3.4", group: :development
+gem "haml-rails", ">= 0.3.4"
 gem "newrelic_rpm"
 gem "timecop"
 gem "fabrication"
