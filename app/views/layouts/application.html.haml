@@ -14,20 +14,38 @@
 
       ga('create', 'UA-16581630-1', 'solseed.org');
       ga('send', 'pageview');
-    .page
-      %header#page-header
-        .wrapper
-          %h1#logo
-            = link_to "SolSeed ... Embrace Science. Cherish the Earth. Bring Life!", "/"
+    .page.wrapper
+      %header.header#page-header
+        %h1#logo
+          = link_to image_tag("SolSeed-Emblem.png"), "/"
+          .tagline= link_to "SolSeed ... Embrace Science. Cherish the Earth. Bring Life!", "/"
+      .page-content.middle
+        .container
+          %main.content
+            = yield
+        %aside.left-sidebar
           %ul
+            %li
+              = link_to "Home", "/"
             %li
               = link_to "Our Beliefs", "/we_believe"
             %li
-              = link_to "Join Us", "/subscriptions/new"
-            %li
               = link_to "On Facebook", "http://www.facebook.com/SolSeed"
             %li
-              = link_to "Our Wiki", "http://wiki.solseed.org"
-      .page-content
-        .wrapper
-          = yield
+              = link_to "Our Wiki", "http://www.solseed.org"
+            %li
+              = link_to "Connect", "/subscriptions/new"
+          - if show_sidebar_subscription
+            .subscribe
+              = render "subscriptions/form"
+    %footer.footer
+      %p
+        If you find yourself resonating with our vision, please join our
+        newsletter list (use the textbox in the sidebar). In addition to our
+        quarterly newsletter, we will send you a short series of emails that
+        introduces us and provides an overview of the opportunities within our
+        movement.
+
+      %p
+        We will never share your contact info with others, and there is a
+        prominent unsubscribe link in every email we send.

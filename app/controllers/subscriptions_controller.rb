@@ -32,8 +32,8 @@ class SubscriptionsController < ApplicationController
         gb = Gibbon::API.new(ENV['MAILCHIMP_API_KEY'])
         list_id_for_friends_of_solseed_list = '9c0e91fd66'
         gb.lists.subscribe id: list_id_for_friends_of_solseed_list, email: {email: @subscription.email}
-        format.html { redirect_to '/', notice: 'Subscription was successfully created, please visit your email to confirm!' }
-        format.json { render action: 'show', status: :created, location: @subscription }
+        format.html { redirect_to @subscription, notice: "Thanks for subscribing! Visit your email to confirm your subscription." }
+        format.json { render action: 'subscriptions#show', status: :created, location: @subscription }
       else
         format.html { render action: 'new' }
         format.json { render json: @subscription.errors, status: :unprocessable_entity }

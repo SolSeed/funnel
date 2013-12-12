@@ -3,16 +3,9 @@
 %p
   %b Email:
   = @subscription.email
-%p
-  %b Confirmation token:
-  = @subscription.confirmation_token
-%p
-  %b Confirmed at:
-  = @subscription.confirmed_at
-%p
-  %b Confirmation sent at:
-  = @subscription.confirmation_sent_at
 
-= link_to 'Edit', edit_subscription_path(@subscription)
-\|
-= link_to 'Back', subscriptions_path
+%p
+  In addition to our quarterly newsletter, we will send you a short series of emails that introduces us and provides an overview of the opportunities within our movement.
+
+%p
+  We will never share your contact info with others, and there is a prominent unsubscribe link in every email we send.
