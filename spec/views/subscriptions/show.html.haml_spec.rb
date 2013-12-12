@@ -4,7 +4,6 @@ describe "subscriptions/show" do
   before(:each) do
     @subscription = assign(:subscription, stub_model(Subscription,
       :email => "Email",
-      :confirmation_token => "Confirmation Token"
     ))
   end
 
@@ -12,6 +11,5 @@ describe "subscriptions/show" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Email/)
-    rendered.should match(/Confirmation Token/)
   end
 end

@@ -2,12 +2,6 @@ class SubscriptionsController < ApplicationController
   helper SubscriptionsHelper
   before_action :set_subscription, only: [:show, :edit, :update, :destroy]
 
-  # GET /subscriptions
-  # GET /subscriptions.json
-  def index
-    @subscriptions = Subscription.all
-  end
-
   # GET /subscriptions/1
   # GET /subscriptions/1.json
   def show
@@ -18,10 +12,6 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new
   end
 
-  # GET /subscriptions/1/edit
-  def edit
-  end
-
   # POST /subscriptions
   # POST /subscriptions.json
   def create
@@ -29,9 +19,7 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        gb = Gibbon::API.new(ENV['MAILCHIMP_API_KEY'])
-        list_id_for_friends_of_solseed_list = '9c0e91fd66'
-        gb.lists.subscribe id: list_id_for_friends_of_solseed_list, email: {email: @subscription.email}
+        subscribe_to_friends_of_solseed_list(@subscription.email)
         format.html { redirect_to @subscription, notice: "Thanks for subscribing! Visit your email to confirm your subscription." }
         format.json { render action: 'subscriptions#show', status: :created, location: @subscription }
       else
@@ -41,31 +29,13 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /subscriptions/1
-  # PATCH/PUT /subscriptions/1.json
-  def update
-    respond_to do |format|
-      if @subscription.update(subscription_params)
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @subscription.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /subscriptions/1
-  # DELETE /subscriptions/1.json
-  def destroy
-    @subscription.destroy
-    respond_to do |format|
-      format.html { redirect_to subscriptions_url }
-      format.json { head :no_content }
-    end
-  end
-
   private
+    def subscribe_to_friends_of_solseed_list(email)
+      gb = Gibbon::API.new(ENV['MAILCHIMP_API_KEY'])
+      list_id_for_friends_of_solseed_list = '9c0e91fd66'
+      gb.lists.subscribe id: list_id_for_friends_of_solseed_list, email: {email: email}
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription
       @subscription = Subscription.find(params[:id])

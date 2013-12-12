@@ -1,7 +1,7 @@
 Funnel::Application.routes.draw do
   root 'landing#index'
   resources :visitors
-  resources :subscriptions
+  resources :subscriptions, :only => [:new, :create, :show]
   devise_for :users
   get 'we_believe' => 'we_believe#index'
 
