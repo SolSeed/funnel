@@ -28,15 +28,170 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
+}
+
+body {
+  line-height: 1;
+  background: rgb(0,10,50);
+  color: white;
+}
+a {
+  color: white;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+html {
+  height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+body {
+  font: 16px/22px Arial, sans-serif;
+  height: 100%;
+}
+p {
+    margin: 16px 0px 16px 0px;
+}
+.epigraph {
+    margin: 16px 0px 16px 32px;
+}
+.front-image {
+ float: left;
+ margin-right: 16px;
+}
+
+h2 {
+    font-size: 140%;
+    font-weight: bold;
+}
+h3 {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.wrapper {
+  width: 100%;
+  min-width: 1000px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+.subscribe {
+  margin-top: 16px;
+}
+form .field { color: black; }
+form .field { position:relative }
+form .field br { display: none }
+form .field label  { position:absolute; top:0; left:10px }
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+  height: 60px;
+  h1 {
+      margin: 16px 0px 6px 10px;
+      img {
+        float: left;
+      }
+      .tagline {
+        padding-left: 40px;
+        padding-top: 15px;
+        font-style: italic;
+        a {
+         text-decoration:none;
+        }
+      }
+  }
+}
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+.middle {
+  width: 100%;
+  padding: 0 0 100px;
+  position: relative;
+}
+.middle:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.container {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+.content {
+  h1 {
+      margin: 16px 0px 6px 10px;
+  }
+  padding: 0 0 0 170px;
+  ul {
+     list-style-type: disc;
+     list-style-position: inside;
+  }
+  ol {
+     list-style-type: decimal;
+     list-style-position: inside;
+  }
+  ul ul, ol ul {
+     list-style-type: circle;
+     list-style-position: inside;
+     margin-left: 15px;
+  }
+  ol ol, ul ol {
+     list-style-type: lower-latin;
+     list-style-position: inside;
+     margin-left: 15px;
+  }
+}
+
+
+/* Left Sidebar
+-----------------------------------------------------------------------------*/
+.left-sidebar {
+  float: left;
+  width: 150px;
+  margin-left: -100%;
+  position: relative;
+  padding-left: 10px;
+}
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer {
+  margin: -100px auto 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  min-width: 1000px;
+  height: 100px;
+  position: relative;
 }
