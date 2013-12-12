@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+  helper SubscriptionsHelper
   before_action :set_subscription, only: [:show, :edit, :update, :destroy]
 
   # GET /subscriptions
