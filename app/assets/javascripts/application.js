@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery.ui.all
 //= require jquery_ujs
+//= require foundation
 //= require jquery.easing.1.3
 //= require jquery.infieldlabel
 //= require booklet/jquery.booklet.latest
@@ -24,3 +25,4 @@
 $(document).ready(function(){
   $("label").inFieldLabels();
 });
+$(function(){ $(document).foundation(); });
