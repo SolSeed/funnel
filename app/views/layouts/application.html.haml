@@ -3,54 +3,20 @@
   %head
     %meta{ charset: "utf-8" }
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
-
+    %meta{ name: "description", content: "#{content_for?(:description) ? yield(:description) : 'The Homepage of the SolSeed truth, beauty, and values movement.'}"}
     %title= content_for?(:title) ? yield(:title) : "The SolSeed Movement"
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    :javascript
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-16581630-1', 'solseed.org');
-      ga('send', 'pageview');
-    .page.wrapper
-      %header.header#page-header
-        %h1#logo
-          = link_to image_tag("SolSeed-Emblem.png"), "/"
-          .tagline= link_to "SolSeed ... Embrace Science. Cherish the Earth. Bring Life!", "/"
-      .page-content.middle
-        .container
-          %main.content
-            = yield
-        %aside.left-sidebar
-          %ul
-            %li
-              = link_to "Home", "/"
-            %li
-              = link_to "Our Beliefs", "/we_believe"
-            %li
-              = link_to "On Facebook", "http://www.facebook.com/SolSeed"
-            %li
-              = link_to "Our Wiki", "http://www.solseed.org"
-            %li
-              = link_to "Connect", "/subscriptions/new"
-          - if show_sidebar_subscription
-            .subscribe
-              = render "subscriptions/form"
-      %footer.footer
-        %p
-          If you find yourself resonating with our vision, please join our
-          newsletter list (use the textbox in the sidebar). In addition to our
-          quarterly newsletter, we will send you a short series of emails that
-          introduces us and provides an overview of the opportunities within our
-          movement.
-
-        %p
-          We will never share your contact info with others, and there is a
-          prominent unsubscribe link in every email we send.
-
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %header
+      = render 'layouts/navigation'
+    %main{:role => "main"}
+      .row
+        .large-2.medium-2.columns
+          .hide-for-small
+            = render 'layouts/sidebar'
+        .large-10.medium-10.columns
+          = render 'layouts/messages'
+          = yield
