@@ -10,13 +10,35 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %header
-      = render 'layouts/navigation'
-    %main{:role => "main"}
-      .row
-        .large-2.medium-2.columns
-          .hide-for-small
-            = render 'layouts/sidebar'
-        .large-10.medium-10.columns
-          = render 'layouts/messages'
-          = yield
+    .off-canvas-wrap
+      .inner-wrap
+        %nav.tab-bar.show-for-small-only
+          %section.left-small
+            %a.left-off-canvas-toggle.menu-icon
+              %span
+          %section.middle.tab-bar-section
+            %h1.title.show-for-small-only
+              = link_to "SolSeed", "/"
+        %aside.left-off-canvas-menu
+          %ul.off-canvas-list
+            %li= link_to "Home", root_path
+            %li= link_to "Our Beliefs", "/we_believe"
+            %li= link_to "On Facebook", "http://www.facebook.com/SolSeed"
+            %li= link_to "Our Wiki", "http://www.solseed.org"
+            %li= link_to "Connect", "/subscriptions/new"
+        %section.main-section
+          %main{:role => "main"}
+            .row.show-for-medium-up
+              %header
+                %h1.title.show-for-medium-up
+                  = link_to image_tag("SolSeed-Emblem.png"), root_path
+                  = link_to "SolSeed ... Embrace Science. Cherish the Earth. Bring Life!", "/"
+            .row
+              .small-2.show-for-medium-up.columns
+                .hide-for-small
+                  = render 'layouts/sidebar'
+              .medium-10.columns
+                = render 'layouts/messages'
+                = yield
+        %a.exit-off-canvas
+
