@@ -1,0 +1,9 @@
+%a{ :id => "/page/#{page}" }
+.row.show-for-small-only
+  .small-12.columns
+    %h3= title
+.row
+  = image_tag "we_believe/#{image}.jpg", class: "show-for-small-only"
+  = image_tag "we_believe/#{image}.jpg", class: "show-for-medium-up medium-5 large-7 columns", style: "float: right;"
+  %h3.show-for-medium-up= title
+  = yield image.to_sym
