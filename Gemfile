@@ -15,7 +15,7 @@ gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
 gem 'newrelic_rpm'
 gem 'pg'
-gem 'rails', '4.0.0'
+gem 'rails'
 gem 'rails-footnotes', '>= 3.7.9', group: :development
 gem 'rails_12factor', group: :production
 gem 'rails_layout', group: :development
@@ -23,6 +23,7 @@ gem 'rspec-rails', group: [:development, :test]
 gem 'sass-rails', '~> 4.0.0'
 gem 'sdoc', require: false, group: :doc
 gem 'silent-postgres'
+gem 'sprockets_better_errors'
 gem 'timecop'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
