@@ -4,7 +4,7 @@ ruby '2.1.1'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'debugger', groups: [:development, :test]
-gem 'devise', github: 'Trust40/devise'
+gem 'devise'
 gem 'fabrication'
 gem 'foundation-rails'
 gem 'gibbon'
