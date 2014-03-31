@@ -9,6 +9,7 @@ gem 'fabrication'
 gem 'foundation-rails'
 gem 'gibbon'
 gem 'haml-rails', '>= 0.3.4'
+gem 'heroku_rails_deflate', :group => :production
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
