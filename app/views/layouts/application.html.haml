@@ -5,9 +5,8 @@
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
     %meta{ name: "description", content: "#{content_for?(:description) ? yield(:description) : 'The Homepage of the SolSeed truth, beauty, and values movement.'}"}
     %title= content_for?(:title) ? yield(:title) : "The SolSeed Movement"
-    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "vendor/modernizr", :async => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true, :async => true
     = csrf_meta_tags
   %body
     .off-canvas-wrap
@@ -42,3 +41,4 @@
                 = yield
         %a.exit-off-canvas
 
+= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
