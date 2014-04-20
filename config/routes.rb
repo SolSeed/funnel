@@ -5,6 +5,7 @@ Funnel::Application.routes.draw do
   devise_for :users
   get 'we_believe' => 'we_believe#index'
 
+  get '*loc' => redirect("http://wiki.solseed.org/%{loc}")
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
